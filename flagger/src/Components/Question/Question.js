@@ -19,8 +19,12 @@ const Question = ({
       totalQuestions: 10,
     };
 
-    newGameState.correctAnswers += flagName === answer ? 1 : -1;
+    newGameState.correctAnswers += flagName === answer ? 1 : 0;
     newGameState.answersGiven += 1;
+
+    if (newGameState.answersGiven === gameState.totalQuestions) {
+      newGameState.hasStarted = false;
+    }
 
     setGameState(newGameState);
     getNewFlag();

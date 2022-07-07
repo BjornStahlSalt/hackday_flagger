@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from './Components/Question/Question';
 import Score from './Components/Score/Score';
+import HighScore from './Components/HighScore/HighScore';
 import './App.css';
 
 const App = () => {
@@ -37,6 +38,10 @@ const App = () => {
     getNewFlag();
   };
 
+  useEffect(() => {
+    console.log('Effect');
+  }, []);
+
   if (gameState.hasStarted) {
     return (
       <div className="App">
@@ -56,6 +61,7 @@ const App = () => {
       <header className="App-header">
         <button className="App__Start" type="submit" onClick={startGame}>Start!</button>
       </header>
+      <HighScore />
     </div>
   );
 };
