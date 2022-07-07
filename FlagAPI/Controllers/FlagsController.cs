@@ -18,9 +18,9 @@ public class FlagsController : ControllerBase
     var response = new FlagResponse()
     {
       Name = "Andorra",
-      Url = "https://countryflagsapi.com/png/020"
+      Url = "https://countryflagsapi.com/svg/020"
     };
 
-    return response;
+    return Ok(response);
   }
 }
