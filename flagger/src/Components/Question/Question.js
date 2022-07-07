@@ -1,30 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './Question.css';
 
-const Question = () => {
-  const [imgUrl, setImgUrl] = useState('');
-  const [countryName, setCountryName] = useState('');
+const Question = ({ gameState, flagUrl, flagName }) => {
   const [answer, setAnswer] = useState('');
 
   useEffect(() => {
-    fetch("https://localhost:7094/api/Flags")
-      .then(response => response.json())
-      .then(data => {
-        setCountryName(data.name);
-        setImgUrl(data.url);
-      })
-      .catch(err => console.log(err))
+
   }, []);
 
   const submitAnswer = () => {
-    console.log(countryName === answer);
+    console.log(flagName === answer);
   };
 
   return (
     <form className="Question" onSubmit={submitAnswer}>
-      <img className="Question__Img" src={imgUrl} alt="flag" />
-      <label className="Question__Label">Name the country</label>
-      <input className="Question__Input" value={answer} onChange={e => setAnswer(e.target.value)}></input>
+      <h1>{`Flag ${gameState.answersGiven} out of ${gameState.totalQuestions}`}</h1>
+      <img className="Question__Img" src={flagUrl} alt="flag" />
+      <h3 className="Question__Label">Name the country</h3>
+      <input className="Question__Input" type="text" value={answer} onChange={e => setAnswer(e.target.value)} />
     </form>
   );
 };
