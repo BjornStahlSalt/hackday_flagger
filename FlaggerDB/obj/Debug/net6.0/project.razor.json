@@ -16296,6 +16296,37 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "FlaggerDB",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Players/Index.cshtml",
+      "TargetPath": "Views\\Players\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Players/Edit.cshtml",
+      "TargetPath": "Views\\Players\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Players/Create.cshtml",
+      "TargetPath": "Views\\Players\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Players/Details.cshtml",
+      "TargetPath": "Views\\Players\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/Views/Players/Delete.cshtml",
+      "TargetPath": "Views\\Players\\Delete.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
