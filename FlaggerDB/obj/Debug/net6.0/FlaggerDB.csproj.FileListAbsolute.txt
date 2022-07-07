@@ -261,3 +261,5 @@
 /Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/obj/Debug/net6.0/FlaggerDB.pdb
 /Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/obj/Debug/net6.0/FlaggerDB.genruntimeconfig.cache
 /Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/obj/Debug/net6.0/ref/FlaggerDB.dll
+/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/obj/Debug/net6.0/FlaggerDB.RazorAssemblyInfo.cache
+/Users/saltdev/Documents/salt-weekendtests/hackathon/FlaggerDB/obj/Debug/net6.0/FlaggerDB.RazorAssemblyInfo.cs
