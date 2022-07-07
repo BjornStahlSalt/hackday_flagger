@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using FlagAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace FlagAPI.Controllers;
 
@@ -12,6 +13,7 @@ public class FlagsController : ControllerBase
 
   }
 
+  [EnableCors("flagger")]
   [HttpGet]
   public ActionResult<FlagResponse> Flag()
   {
