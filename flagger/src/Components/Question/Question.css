@@ -1,0 +1,9 @@
+.Question {
+  display: flex;
+  flex-direction: column;
+}
+
+.Question__Img {
+  /* aspect-ratio: initial; */
+  width: 300px;
+}
