@@ -26,8 +26,13 @@ const App = () => {
   };
 
   const startGame = () => {
-    const newGameState = gameState;
-    newGameState.hasStarted = true;
+    const newGameState = {
+      hasStarted: true,
+      playerName: gameState.playerName,
+      answersGiven: gameState.answersGiven,
+      correctAnswers: gameState.correctAnswers,
+      totalQuestions: 10,
+    };
     setGameState(newGameState);
     getNewFlag();
   };
@@ -36,7 +41,12 @@ const App = () => {
     return (
       <div className="App">
         <Score gameState={gameState} />
-        <Question gameState={gameState} flagUrl={flagUrl} flagName={flagName} />
+        <Question
+          gameState={gameState}
+          setGameState={setGameState}
+          getNewFlag={getNewFlag}
+          flagUrl={flagUrl}
+          flagName={flagName} />
       </div>
     );
   }
