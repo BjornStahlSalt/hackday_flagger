@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using FlagAPI.Models;
 using Microsoft.AspNetCore.Cors;
+using FlagAPI.Models;
+using FlagAPI.Data;
 
 namespace FlagAPI.Controllers;
 
@@ -8,19 +9,22 @@ namespace FlagAPI.Controllers;
 [Route("api/[controller]")]
 public class FlagsController : ControllerBase
 {
+  private Random _random;
   public FlagsController()
   {
+    _random = new Random(DateTime.Now.Second);
 
   }
 
   [EnableCors("flagger")]
   [HttpGet]
-  public ActionResult<FlagResponse> Flag()
+  public ActionResult<FlagResponse> RandomFlag()
   {
+    var country = CountryData.Countries[_random.Next(0, CountryData.Countries.Length)];
     var response = new FlagResponse()
     {
-      Name = "Andorra",
-      Url = "https://countryflagsapi.com/svg/020"
+      Name = country.Name,
+      Url = $"https://countryflagsapi.com/svg/{country.Url}"
     };
 
     return Ok(response);

@@ -1,4 +1,6 @@
 
+namespace FlagAPI.Data;
+
 public struct Country
 {
   public string Name;
