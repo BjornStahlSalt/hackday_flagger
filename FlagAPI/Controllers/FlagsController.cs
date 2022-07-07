@@ -12,7 +12,7 @@ public class FlagsController : ControllerBase
   private Random _random;
   public FlagsController()
   {
-    _random = new Random(DateTime.Now.Second);
+    _random = new Random(DateTime.Now.Millisecond);
 
   }
 
