@@ -15,7 +15,11 @@ const HighScore = () => {
 
   return (
     <div className="Score">
-      {highScores.map(item => <p key={item.id}>{item.Name}</p>)}
+      {highScores.map((highScore, i) => (
+        <p key={highScore.id}>
+          {`${i} : ${highScore.name} got ${highScore.correctAnswers} correct answers on ${highScore.playedAt}`}
+        </p>
+      ))}
       {/* <p>
         Player :
         {gameState.playerName}
