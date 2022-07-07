@@ -1,13 +1,26 @@
+using Microsoft.AspNetCore.Mvc;
+using FlagAPI.Models;
 
 namespace FlagAPI.Controllers;
 
-public class FlagsController
+[ApiController]
+[Route("api/[controller]")]
+public class FlagsController : ControllerBase
 {
-  public FlagsController () : ControllerBase
+  public FlagsController()
   {
 
   }
 
-  [httpGet]
-  public ActionResult<>
+  [HttpGet]
+  public ActionResult<FlagResponse> Flag()
+  {
+    var response = new FlagResponse()
+    {
+      Name = "Andorra",
+      Url = "https://countryflagsapi.com/png/020"
+    };
+
+    return response;
+  }
 }
