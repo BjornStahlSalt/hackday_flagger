@@ -24,6 +24,20 @@ const Question = ({
 
     if (newGameState.answersGiven === gameState.totalQuestions) {
       newGameState.hasStarted = false;
+
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: gameState.playerName,
+          CorrectAnswers: newGameState.correctAnswers,
+        }),
+      };
+      fetch('https://localhost:7057/db/HighScores', requestOptions)
+        .then(response => response.json());
+      // .then(data => this.setState({ postId: data.id }));
     }
 
     setGameState(newGameState);

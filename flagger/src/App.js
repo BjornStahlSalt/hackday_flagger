@@ -58,9 +58,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button className="App__Start" type="submit" onClick={startGame}>Start!</button>
+      <header className="App__header">
+        <h3 className="App__h3">Flag Quiz</h3>
       </header>
+      <button className="App__Start" type="submit" onClick={startGame}>Start!</button>
       <HighScore />
     </div>
   );
