@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Question from './Components/Question/Question';
 import Score from './Components/Score/Score';
 import HighScore from './Components/HighScore/HighScore';
+import SetPlayerName from './Components/SetPlayerName/SetPlayerName';
 import './App.css';
 
 const App = () => {
@@ -61,7 +62,8 @@ const App = () => {
       <header className="App__header">
         <h3 className="App__h3">Flag Quiz</h3>
       </header>
-      <button className="App__Start" type="submit" onClick={startGame}>Start!</button>
+      <SetPlayerName gameState={gameState} setGameState={setGameState} />
+      <button className={gameState.playerName === '' ? 'Hide' : 'App__Start'} type="submit" onClick={startGame}>Start!</button>
       <HighScore />
     </div>
   );

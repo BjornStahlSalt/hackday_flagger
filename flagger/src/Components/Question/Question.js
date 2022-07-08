@@ -9,6 +9,7 @@ const Question = ({
   flagName,
 }) => {
   const [answer, setAnswer] = useState('');
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const submitAnswer = () => {
     const newGameState = {
@@ -23,8 +24,6 @@ const Question = ({
     newGameState.answersGiven += 1;
 
     if (newGameState.answersGiven === gameState.totalQuestions) {
-      newGameState.hasStarted = false;
-
       const requestOptions = {
         method: 'POST',
         headers: {
@@ -37,12 +36,20 @@ const Question = ({
       };
       fetch('https://localhost:7057/db/HighScores', requestOptions)
         .then(response => response.json());
-      // .then(data => this.setState({ postId: data.id }));
+
+      newGameState.hasStarted = false;
+      newGameState.answersGiven = 0;
+      newGameState.correctAnswers = 0;
     }
 
     setGameState(newGameState);
+    setShowAnswer(true);
+  };
+
+  const nextFlag = () => {
     getNewFlag();
     setAnswer('');
+    setShowAnswer(false);
   };
 
   const inputKeyPressed = e => {
@@ -51,6 +58,20 @@ const Question = ({
       submitAnswer();
     }
   };
+
+  if (showAnswer) {
+    return (
+      <div className="Question">
+        <h1>{`Flag ${gameState.answersGiven} out of ${gameState.totalQuestions}`}</h1>
+        <img className="Question__Img" src={flagUrl} alt="flag" />
+        <h3 className="Question__Label">The correct answer is</h3>
+        <p>{flagName}</p>
+        <h3 className="Question__Label">Your answer was</h3>
+        <p>{answer}</p>
+        <button type="submit" onClick={nextFlag}>Continue</button>
+      </div>
+    );
+  }
 
   return (
     <div className="Question">

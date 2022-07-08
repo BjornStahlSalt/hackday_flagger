@@ -24,3 +24,7 @@
   width: 5em;
   height: 2em;
 }
+
+.Hide {
+  visibility: hidden;
+}
