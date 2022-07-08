@@ -7,8 +7,7 @@ const HighScore = () => {
     fetch('https://localhost:7057/db/HighScores')
       .then(response => response.json())
       .then(data => {
-        setHighScores(data);
-        console.log(data);
+        setHighScores(data.sort((a, b) => b.correctAnswers - a.correctAnswers));
       })
       .catch(err => console.log(err));
   }, []);
@@ -20,11 +19,6 @@ const HighScore = () => {
           {`${i} : ${highScore.name} got ${highScore.correctAnswers} correct answers on ${highScore.playedAt}`}
         </p>
       ))}
-      {/* <p>
-        Player :
-        {gameState.playerName}
-      </p> */}
-      {/* <p>{`Correct/Total : ${gameState.correctAnswers}/${gameState.answersGiven}`}</p> */}
     </div>
   );
 };
