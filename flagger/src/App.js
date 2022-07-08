@@ -46,13 +46,15 @@ const App = () => {
   if (gameState.hasStarted) {
     return (
       <div className="App">
-        <Score gameState={gameState} />
-        <Question
-          gameState={gameState}
-          setGameState={setGameState}
-          getNewFlag={getNewFlag}
-          flagUrl={flagUrl}
-          flagName={flagName} />
+        <div className="App__Body">
+          <Score gameState={gameState} />
+          <Question
+            gameState={gameState}
+            setGameState={setGameState}
+            getNewFlag={getNewFlag}
+            flagUrl={flagUrl}
+            flagName={flagName} />
+        </div>
       </div>
     );
   }
@@ -62,9 +64,11 @@ const App = () => {
       <header className="App__header">
         <h3 className="App__h3">Flag Quiz</h3>
       </header>
-      <SetPlayerName gameState={gameState} setGameState={setGameState} />
-      <button className={gameState.playerName === '' ? 'Hide' : 'App__Start'} type="submit" onClick={startGame}>Start!</button>
-      <HighScore />
+      <div className="App__Body">
+        <SetPlayerName gameState={gameState} setGameState={setGameState} />
+        <button className={gameState.playerName === '' ? 'Hide' : 'App__Start'} type="submit" onClick={startGame}>Start!</button>
+        <HighScore />
+      </div>
     </div>
   );
 };

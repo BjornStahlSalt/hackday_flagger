@@ -25,9 +25,11 @@ public class HighScoresController : Controller
   [HttpGet]
   public async Task<IActionResult> Index()
   {
-    return _context.HighScore != null ?
-                Ok(await _context.HighScore.ToListAsync()) :
-                Problem("Entity set 'PlayerContext.Player'  is null.");
+    if (_context.HighScore == null)
+      return Problem("Entity set 'PlayerContext.Player'  is null.");
+
+    var response = await _context.HighScore.ToListAsync();
+    return Ok(response.Select(h => new { Name = h.Name, CorrectAnswers = h.CorrectAnswers, PlayedAt = h.PlayedAt?.ToShortDateString() }));
   }
 
   [EnableCors("highscore")]

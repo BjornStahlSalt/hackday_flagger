@@ -1,9 +1,12 @@
 .Question {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Question__Img {
   /* aspect-ratio: initial; */
   width: 300px;
+  box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
 }
