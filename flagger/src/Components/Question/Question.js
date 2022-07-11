@@ -68,7 +68,7 @@ const Question = ({
         <p>{flagName}</p>
         <h3 className="Question__Label">Your answer was</h3>
         <p>{answer}</p>
-        <button type="submit" onClick={nextFlag}>Continue</button>
+        <button className="Question__Submit" type="submit" onClick={nextFlag}>Continue</button>
       </div>
     );
   }
@@ -77,9 +77,9 @@ const Question = ({
     <div className="Question">
       <h1>{`Flag ${gameState.answersGiven} out of ${gameState.totalQuestions}`}</h1>
       <img className="Question__Img" src={flagUrl} alt="flag" />
-      <h3 className="Question__Label">Name the country</h3>
+      <h3 className="Question__Label">What country flag is this?</h3>
       <input className="Question__Input" type="text" value={answer} onKeyDown={e => inputKeyPressed(e)} onChange={e => setAnswer(e.target.value)} />
-      <button type="submit" onClick={submitAnswer}>Answer</button>
+      <button className="Question__Submit" type="submit" onClick={submitAnswer}>Answer</button>
     </div>
   );
 };

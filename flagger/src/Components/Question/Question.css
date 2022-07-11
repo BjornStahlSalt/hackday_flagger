@@ -6,7 +6,32 @@
 }
 
 .Question__Img {
-  /* aspect-ratio: initial; */
   width: 300px;
   box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
+}
+
+.Question__Input {
+  border-color: aliceblue;
+  border-style: solid;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
+}
+
+.Question__Submit {
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(134, 145, 154, 0.716);
+  margin-top: 15px;
+  margin-left: 10px;
+  height: 2em;
+}
+
+.Question__Label {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
 }

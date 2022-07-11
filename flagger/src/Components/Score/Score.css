@@ -1,3 +1,12 @@
 .Score {
   font-size: x-large;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
+  background-color: rgba(240, 248, 255, 0.179);
+  margin-top: 10px;
+  padding: 0 50px
+}
+
+p {
+  margin: 10px 0;
 }

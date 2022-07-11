@@ -1,8 +1,9 @@
 .HighScore {
   /* box-sizing: border-box; */
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.437);
   /* width: fit-content; */
   width: 500px;
+  border-radius: 10px;
   /* border: 100px; */
   box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
 }

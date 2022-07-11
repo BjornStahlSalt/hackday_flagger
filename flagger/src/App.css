@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #f2d8d7 0%, #aac9e2 100%);
+
+
+
 }
 
 .App__Body {
@@ -21,7 +27,11 @@
   color: #61dafb;
 }
 
-.App__h3 {}
+.App__h3 {
+  box-sizing: border-box;
+  margin-top: 0;
+  padding-top: 0.5em;
+}
 
 .App__Start {
   font-size: 50px;
@@ -30,7 +40,8 @@
   margin: 30px;
   border-width: 2px;
   border-radius: 15px;
-  border-color: rgba(211, 255, 255, 0.617);
+  border-color: rgba(211, 255, 255, 0.38);
+  border-style: solid;
   background-color: aliceblue;
 }
 

@@ -26,7 +26,7 @@ const SetPlayerName = ({ gameState, setGameState }) => {
     <div className="PlayerName">
       <h2>{`Player Name : ${gameState.playerName}`}</h2>
       <input className="PlayerName__Input" type="text" value={inputValue} onKeyDown={e => inputKeyPressed(e)} onChange={e => setInputValue(e.target.value)} />
-      <button type="submit" onClick={submitName}>Confirm</button>
+      <button className="PlayerName__Button" type="submit" onClick={submitName}>Confirm</button>
     </div>
   );
 };

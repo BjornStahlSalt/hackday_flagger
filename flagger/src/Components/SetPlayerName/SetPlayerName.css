@@ -1,13 +1,26 @@
 .PlayerName {
   box-sizing: border-box;
   width: 500px;
-  background-color: rgba(227, 186, 235, 0.246);
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.437);
   margin: 0 50px;
   box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
 }
 
 .PlayerName__Input {
-  background-color: rgba(239, 231, 241, 0.246);
+  background-color: rgba(254, 249, 255, 0.646);
+  border-color: aliceblue;
+  border-style: solid;
+  border-radius: 10px;
   margin-bottom: 15px;
   box-shadow: 0 1px 2px 0px rgba(78, 78, 78, 0.24), 0 2px 2px 0 rgba(202, 202, 202, 0.19);
+}
+
+.PlayerName__Button {
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(134, 145, 154, 0.716);
+  margin-left: 10px;
+  height: 2em;
 }
