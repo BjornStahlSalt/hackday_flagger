@@ -11,6 +11,5 @@ public class PlayerContext : DbContext
   {
   }
 
-  public DbSet<Player>? Player { get; set; }
   public DbSet<HighScore>? HighScore { get; set; }
 }

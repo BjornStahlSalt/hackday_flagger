@@ -20,7 +20,6 @@ public class HighScoresController : Controller
     _context = context;
   }
 
-  // GET: HighScores\
   [EnableCors("highscore")]
   [HttpGet]
   public async Task<IActionResult> Index()
@@ -44,13 +43,6 @@ public class HighScoresController : Controller
     return highScore != null ? Ok(highScores) : NotFound();
   }
 
-  // GET: HighScores/Create
-  // [HttpGet]
-  // public IActionResult Create()
-  // {
-  //   return View();
-  // }
-
   // POST: HighScores/Create
   // To protect from overposting attacks, enable the specific properties you want to bind to.
   // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -64,52 +56,8 @@ public class HighScoresController : Controller
     {
       _context.Add(highscore);
       await _context.SaveChangesAsync();
-      // return RedirectToAction(nameof(Index));
     }
-    // return View(player);
+
     return CreatedAtAction(nameof(HighScore), new { id = highscore.Id }, highscore);
   }
-
-  // GET: Players/Delete/5
-  // [HttpGet, ActionName("Delete")]
-  // public async Task<IActionResult> Delete(int? id)
-  // {
-  //   if (id == null || _context.Player == null)
-  //   {
-  //     return NotFound();
-  //   }
-
-  //   var player = await _context.Player
-  //       .FirstOrDefaultAsync(m => m.Id == id);
-  //   if (player == null)
-  //   {
-  //     return NotFound();
-  //   }
-
-  //   return View(player);
-  // }
-
-  // POST: Players/Delete/5
-  // [HttpPost, ActionName("Delete")]
-  // [ValidateAntiForgeryToken]
-  // public async Task<IActionResult> DeleteConfirmed(int id)
-  // {
-  //   if (_context.Player == null)
-  //   {
-  //     return Problem("Entity set 'PlayerContext.Player'  is null.");
-  //   }
-  //   var player = await _context.Player.FindAsync(id);
-  //   if (player != null)
-  //   {
-  //     _context.Player.Remove(player);
-  //   }
-
-  //   await _context.SaveChangesAsync();
-  //   return RedirectToAction(nameof(Index));
-  // }
-
-  // private bool PlayerExists(int id)
-  // {
-  //   return (_context.Player?.Any(e => e.Id == id)).GetValueOrDefault();
-  // }
 }

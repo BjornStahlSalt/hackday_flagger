@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FlaggerDB.Migrations
 {
-    public partial class AddHighscoreTable : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace FlaggerDB.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: true),
                     CorrectAnswers = table.Column<int>(type: "int", nullable: true),
                     PlayedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
