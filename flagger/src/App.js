@@ -23,8 +23,8 @@ const App = () => {
       .then(data => {
         setFlagName(data.name);
         setFlagUrl(data.url);
-      })
-      .catch(err => console.log(err));
+      });
+    // .catch(err => console.log(err));
   };
 
   const startGame = () => {
