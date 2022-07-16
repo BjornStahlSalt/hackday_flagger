@@ -11,11 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-
-    defaults:
-      run:
-        working-directory: ./flagger
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -29,12 +25,13 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-      
+          npm run test --if-present
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./flagger
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,10 +47,10 @@ jobs:
           name: node-app
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'flagger'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E52186E072E4A3ABC5BC4A0D93DCBB1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97EDA391D834444C9398EDC4FE408D82 }}
           package: .
