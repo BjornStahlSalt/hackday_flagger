@@ -40,7 +40,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log('Effect');
+    // console.log('Effect');
   }, []);
 
   if (gameState.hasStarted) {
