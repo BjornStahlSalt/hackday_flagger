@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - FlaggerDB
+name: Build and deploy ASP.Net Core app to Azure Web App - FlagAPI
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./FlaggerDB
+        working-directory: ./FlagAPI
 
     steps:
       - uses: actions/checkout@v2
@@ -55,7 +55,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'FlaggerDB'
+          app-name: 'FlagAPI'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_19DAD4E84EA04EBBB549501F7304AC5F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C14B8AD76F4649F08401634D754B7407 }}
           package: .

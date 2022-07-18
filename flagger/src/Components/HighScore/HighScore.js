@@ -8,8 +8,8 @@ const HighScore = () => {
       .then(response => response.json())
       .then(data => {
         setHighScores(data.sort((a, b) => b.correctAnswers - a.correctAnswers).splice(0, 10));
-      })
-      .catch(err => console.log(err));
+      });
+    // .catch(err => console.log(err));
   }, []);
 
   return (
