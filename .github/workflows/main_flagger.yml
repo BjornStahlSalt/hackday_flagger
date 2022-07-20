@@ -63,4 +63,4 @@ jobs:
           app-name: 'flagger'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97EDA391D834444C9398EDC4FE408D82 }}
-          package: ./flagger
+          package: .
