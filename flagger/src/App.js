@@ -18,7 +18,7 @@ const App = () => {
   const [flagUrl, setFlagUrl] = useState('');
 
   const getNewFlag = () => {
-    fetch('https://localhost:7094/api/Flags')
+    fetch('https://flagapi.azurewebsites.net/api/Flags')
       .then(response => response.json())
       .then(data => {
         setFlagName(data.name);

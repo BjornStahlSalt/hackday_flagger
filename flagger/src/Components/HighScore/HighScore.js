@@ -4,7 +4,7 @@ import './HighScore.css';
 const HighScore = () => {
   const [highScores, setHighScores] = useState([]);
   useEffect(() => {
-    fetch('https://localhost:7057/db/HighScores')
+    fetch('https://flaggerdb.azurewebsites.net/db/HighScores')
       .then(response => response.json())
       .then(data => {
         setHighScores(data.sort((a, b) => b.correctAnswers - a.correctAnswers).splice(0, 10));
