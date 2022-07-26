@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-  options.AddPolicy("flagger", policy => { policy.WithOrigins("https://flagger.azurewebsites.net"); });
+  options.AddPolicy("flagger", policy => { policy.WithOrigins("https://brave-pond-046fc8e03.1.azurestaticapps.net"); });
 });
 
 var app = builder.Build();

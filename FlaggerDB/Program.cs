@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
   options.AddPolicy("highscore", policy =>
   {
-    policy.WithOrigins("https://flagger.azurewebsites.net")
+    policy.WithOrigins("https://brave-pond-046fc8e03.1.azurestaticapps.net")
     .WithHeaders(
     HeaderNames.ContentType,
     HeaderNames.AccessControlAllowHeaders,
