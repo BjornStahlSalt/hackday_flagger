@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
   options.AddPolicy("highscore", policy =>
   {
-    policy.WithOrigins("http://localhost:3000")
+    policy.WithOrigins("https://flagger.azurewebsites.net")
     .WithHeaders(
     HeaderNames.ContentType,
     HeaderNames.AccessControlAllowHeaders,

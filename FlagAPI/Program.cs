@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-  options.AddPolicy("flagger", policy => { policy.WithOrigins("http://localhost:3000"); });
+  options.AddPolicy("flagger", policy => { policy.WithOrigins("https://flagger.azurewebsites.net"); });
 });
 
 var app = builder.Build();
